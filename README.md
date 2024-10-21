@@ -72,4 +72,8 @@ By identifying which parameters have the most significant impact on model perfor
 
 ## Related Research
 
-This project is built upon methodologies and insights presented in the research paper titled [“EEG Features for Cognitive Load Classification: A Systematic Review”](https://www.mdpi.com/2306-5729/8/6/95). The paper explores various EEG features and their effectiveness in cognitive load classification, providing a foundation for the feature selection and analysis conducted in this project. By leveraging the techniques outlined in this study, we aim to enhance our understanding of cognitive load through EEG signal processing.
+This project is built upon methodologies and insights presented in the research paper titled [“EEG Features for Cognitive Load Classification: A Systematic Review”](https://www.mdpi.com/2306-5729/8/6/95). 
+
+The paper explores various EEG features and their effectiveness in cognitive load classification, providing a foundation for the feature selection and analysis conducted in this project. 
+
+By leveraging the techniques outlined in this study, we aim to enhance our understanding of cognitive load through EEG signal processing.
