@@ -39,7 +39,9 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 
 ## Results
 
-The performance of the model was evaluated using precision, recall, and F1-score metrics across the different classes. The following table summarizes the results:
+The performance of the model was evaluated using precision, recall, and F1-score metrics across the different classes. 
+
+The following table summarizes the results:
 
 | Class | Precision | Recall | F1-Score | Support |
 |-------|-----------|--------|----------|--------|
