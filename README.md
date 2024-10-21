@@ -56,6 +56,7 @@ Overall accuracy of the model was **61%**.
   - Precision: 0.61
   - Recall: 0.71
   - F1-Score: 0.59
+
 - **Weighted Average**:
   - Precision: 0.67
   - Recall: 0.61
@@ -65,9 +66,6 @@ Overall accuracy of the model was **61%**.
 - **A** = Alzheimer's Disease (Class 0)
 - **F** = Frontotemporal Dementia (Class 1)
 - **C** = Healthy Control (Class 2)
-
-These results indicate varying performance across different classes, with the model showing stronger precision and recall for Alzheimer's Disease and weaker performance for Healthy Control.
-
 
 ## Next Steps
 
