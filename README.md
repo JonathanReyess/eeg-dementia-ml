@@ -8,7 +8,11 @@ The goal of this project is to develop a machine learning model that can predict
 
 ## Data Acquisition
 
-This project utilizes the EEG dataset available on OpenNeuro. To download this dataset, you can use the `@openneuro/cli` command-line tool. 
+This project utilizes the EEG dataset available on OpenNeuro. 
+
+The dataset contains EEG resting state recordings from individuals diagnosed with Alzheimer's disease (AD), Frontotemporal Dementia (FTD), and healthy controls (CN).
+
+To download this dataset, you can use the `@openneuro/cli` command-line tool. 
 
 ### Installation
 First, ensure you have Node.js installed on your machine. You can download it from [nodejs.org](https://nodejs.org/).
