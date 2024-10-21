@@ -62,11 +62,6 @@ Overall accuracy of the model was **61%**.
   - Recall: 0.61
   - F1-Score: 0.60
 
-### Class Label Definitions
-- **A** = Alzheimer's Disease (Class 0)
-- **F** = Frontotemporal Dementia (Class 1)
-- **C** = Healthy Control (Class 2)
-
 ## Next Steps
 
 ### Hyperparameter Tuning
