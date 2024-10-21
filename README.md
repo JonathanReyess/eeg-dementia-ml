@@ -1,4 +1,8 @@
+
+# Cognitive Decline Prediction Using EEG Data and Machine Learning.
+
 ## Project Overview
+
 The goal of this project is to develop a machine learning model that can predict cognitive decline based on patterns in electroencephalogram (EEG) data, which records brain activity. 
 
 
@@ -20,4 +24,12 @@ Before running the download command, you will need to log in to your OpenNeuro a
 
 ```bash
 openneuro login
+```
+
+### Downloading the Dataset 
+
+To download the dataset, execute the following command in your terminal:
+
+```bash
+openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 ```
