@@ -27,7 +27,7 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 ## Key Contributions
 
 - **Advanced Feature Engineering**: Extended beyond basic spectral features to include connectivity measures and hemispheric asymmetry
-- **Systematic Resampling Evaluation**: Tested 9 different techniques for handling class imbalance
+- **Systematic Resampling Evaluation**: Tested 7 different techniques for handling class imbalance
 - **Rigorous Validation**: Conservative cross-validation revealing significant overfitting challenges
 - **Limitation Documentation**: Quantified fundamental challenges in multi-class dementia classification
 - **Binary Classification Approach**: Developed clinically-oriented disease vs. healthy screening model
