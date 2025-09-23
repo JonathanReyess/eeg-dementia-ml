@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project extends the foundational work of Miltiadous et al. (2023) by developing advanced machine learning classifiers for distinguishing between Alzheimer's Disease (AD), Frontotemporal Dementia (FTD), and healthy controls using EEG data. The study implements comprehensive feature engineering, class imbalance handling, and rigorous validation techniques.
+This project extends the foundational work of Miltiadous et al. (2023) by developing advanced machine learning classifiers for distinguishing between Alzheimer's Disease (AD), Frontotemporal Dementia (FTD), and healthy controls using EEG data. The study implements comprehensive feature engineering, class imbalance handling, and rigorous validation techniques that reveal both the potential and fundamental limitations of current EEG-based approaches.
 
 ## Dataset
 
@@ -28,18 +28,23 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 
 - **Advanced Feature Engineering**: Extended beyond basic spectral features to include connectivity measures and hemispheric asymmetry
 - **Systematic Resampling Evaluation**: Tested 9 different techniques for handling class imbalance
-- **Rigorous Validation**: Conservative cross-validation prioritizing generalization over peak performance
-- **Binary Classification Approach**: Developed disease vs. healthy screening model
+- **Rigorous Validation**: Conservative cross-validation revealing significant overfitting challenges
+- **Limitation Documentation**: Quantified fundamental challenges in multi-class dementia classification
+- **Binary Classification Approach**: Developed clinically-oriented disease vs. healthy screening model
 
 ## Results
 
 ### Multi-Class Classification (AD vs. FTD vs. Controls)
-- **Cross-Validation Accuracy**: 52.6%
-- **Conclusion**: Insufficient for reliable AD/FTD discrimination
+- **Cross-Validation Accuracy**: 65.1% ± 8.4%
+- **Test Accuracy**: 67.7%
+- **Overfitting Gap**: 22.2% (severe overfitting)
+- **FTD Detection**: 12.5% accuracy (worse than random)
+- **Conclusion**: Clinically unsuitable due to poor FTD discrimination and overfitting
 
 ### Binary Classification (Disease vs. Healthy)
-- **Cross-Validation Accuracy**: 73.3% ± 5.5%
+- **Cross-Validation Accuracy**: 74.6% ± 9.0%
 - **Test Accuracy**: 77.8%
+- **Overfitting Gap**: 9.7% (acceptable)
 - **Sensitivity**: 77.8% (disease detection)
 - **Specificity**: 77.8% (healthy identification)
 
@@ -51,23 +56,26 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 
 ## Performance Comparison
 
-| Study | Classification | Method | Accuracy |
-|-------|---------------|--------|----------|
-| Miltiadous et al. (2023) | AD vs. Controls | RBP + Random Forests | 77.0% |
-| Miltiadous et al. (2023) | FTD vs. Controls | RBP + MLP | 73.1% |
-| **This Study** | **Multi-class** | **Enhanced Features + XGBoost** | **52.6%** |
-| **This Study** | **Binary Screening** | **Enhanced Features + XGBoost** | **73.3%** |
+| Study | Classification | Method | Accuracy | Overfitting |
+|-------|---------------|--------|----------|-------------|
+| Miltiadous et al. (2023) | AD vs. Controls | RBP + Random Forests | 77.0% | Not reported |
+| Miltiadous et al. (2023) | FTD vs. Controls | RBP + MLP | 73.1% | Not reported |
+| **This Study** | **Multi-class** | **Enhanced Features + XGBoost** | **65.1%** | **Severe (22.2%)** |
+| **This Study** | **Binary Screening** | **Enhanced Features + XGBoost** | **74.6%** | **Acceptable (9.7%)** |
 
 ## Key Findings
 
-- **Multi-class limitation**: Current resting-state EEG approaches cannot reliably distinguish between specific dementia types
-- **Binary screening potential**: 73% accuracy shows promise for preliminary disease detection
-- **Dataset constraints**: 88 subjects insufficient for complex feature engineering
-- **Methodological insights**: Conservative validation essential for realistic clinical assessment
+- **Multi-class limitation**: Severe overfitting and catastrophic FTD detection failure (12.5%) demonstrate fundamental limitations of resting-state EEG for dementia type discrimination
+- **Binary screening potential**: 74.6% accuracy shows moderate promise for preliminary disease detection with acceptable generalization
+- **Dataset constraints**: 88 subjects insufficient for complex feature engineering without severe overfitting
+- **Methodological insights**: Rigorous validation essential for realistic clinical assessment
+- **Scientific value**: Documenting classification failures provides important insights for future research directions
 
 ## Clinical Implications
 
-The binary classification approach shows moderate potential for preliminary screening but requires larger validation studies before clinical deployment. The study demonstrates both the promise and limitations of EEG-based dementia classification.
+The binary classification approach shows moderate potential for preliminary screening but requires larger validation studies before clinical deployment. The multi-class model's failure to distinguish dementia types represents an important negative result that contributes to understanding current EEG-based classification limitations.
+
+**Clinical Readiness**: Early research stage - binary model requires external validation on 500+ subjects before clinical consideration.
 
 ## Files Structure
 
@@ -78,7 +86,10 @@ The binary classification approach shows moderate potential for preliminary scre
 │   ├── extracted_features.csv   # Engineered features
 │   └── performance_comparison.csv
 ├── train_test_splits/           # Data splits
-└── models/                      # Trained models
+├── models/                      # Trained models
+│   ├── multiclass_xgb_model.pkl
+│   └── binary_xgb_model.pkl
+└── README.md
 ```
 
 ## Requirements
@@ -89,6 +100,10 @@ The binary classification approach shows moderate potential for preliminary scre
 - scikit-learn
 - imbalanced-learn
 - pandas, numpy, matplotlib, seaborn
+
+## Scientific Impact
+
+This study provides a realistic assessment of current EEG-based dementia classification capabilities through rigorous validation. The honest reporting of both successes (binary classification) and failures (multi-class discrimination) contributes valuable methodological insights to the field about feasible research directions and the importance of conservative validation in medical machine learning.
 
 ## Citation
 
