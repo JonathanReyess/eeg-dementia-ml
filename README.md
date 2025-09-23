@@ -41,6 +41,12 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 - **FTD Detection**: 12.5% accuracy (worse than random)
 - **Conclusion**: Clinically unsuitable due to poor FTD discrimination and overfitting
 
+| Metric | Alzheimer's | Frontotemporal | Control |
+|--------|-------------|----------------|---------|
+| Precision | 0.80 | 0.33 | 0.62 |
+| Recall | 0.92 | 0.12 | 0.80 |
+| F1-Score | 0.86 | 0.18 | 0.70 |
+
 ### Binary Classification (Disease vs. Healthy)
 - **Cross-Validation Accuracy**: 74.6% ± 9.0%
 - **Test Accuracy**: 77.8%
