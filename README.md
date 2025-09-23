@@ -55,8 +55,8 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 |-------|---------------|--------|----------|
 | Miltiadous et al. (2023) | AD vs. Controls | RBP + Random Forests | 77.0% |
 | Miltiadous et al. (2023) | FTD vs. Controls | RBP + MLP | 73.1% |
-| **Our Study** | **Multi-class** | **Enhanced Features + XGBoost** | **52.6%** |
-| **Our Study** | **Binary Screening** | **Enhanced Features + XGBoost** | **73.3%** |
+| **This Study** | **Multi-class** | **Enhanced Features + XGBoost** | **52.6%** |
+| **This Study** | **Binary Screening** | **Enhanced Features + XGBoost** | **73.3%** |
 
 ## Key Findings
 
