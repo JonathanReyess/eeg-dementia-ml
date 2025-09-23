@@ -77,3 +77,11 @@ This project is built upon methodologies and insights presented in the research 
 The paper explores various EEG features and their effectiveness in cognitive load classification, providing a foundation for the feature selection and analysis conducted in this project. 
 
 By leveraging the techniques outlined in this study, we aim to enhance our understanding of cognitive load through EEG signal processing.
+
+
+
+
+
+
+
+

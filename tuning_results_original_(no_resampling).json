@@ -1,0 +1,19 @@
+{
+  "resampling_technique": "Original (No Resampling)",
+  "best_parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "n_estimators": 200,
+    "subsample": 1.0
+  },
+  "cv_score": 0.7,
+  "test_accuracy": 0.6111111111111112,
+  "training_samples": 70,
+  "test_samples": 18,
+  "class_distribution": {
+    "0": 28,
+    "2": 27,
+    "1": 15
+  }
+}
