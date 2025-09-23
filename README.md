@@ -60,22 +60,18 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 |-------|---------------|--------|----------|-------------|
 | Miltiadous et al. (2023) | AD vs. Controls | RBP + Random Forests | 77.0% | Not reported |
 | Miltiadous et al. (2023) | FTD vs. Controls | RBP + MLP | 73.1% | Not reported |
-| **This Study** | **Multi-class** | **Enhanced Features + XGBoost** | **65.1%** | **Severe (22.2%)** |
-| **This Study** | **Binary Screening** | **Enhanced Features + XGBoost** | **74.6%** | **Acceptable (9.7%)** |
+| **This Study** | **AD vs. FTD vs. Controls** | **Enhanced Features + XGBoost** | **65.1%** | **Severe (22.2%)** |
+| **This Study** | **FTD + AD vs. Controls** | **Enhanced Features + XGBoost** | **74.6%** | **Acceptable (9.7%)** |
 
 ## Key Findings
 
-- **Multi-class limitation**: Severe overfitting and catastrophic FTD detection failure (12.5%) demonstrate fundamental limitations of resting-state EEG for dementia type discrimination
+- **Multi-class limitation**: Severe overfitting and FTD detection failure (12.5%) demonstrate fundamental limitations of resting-state EEG for dementia type discrimination
 - **Binary screening potential**: 74.6% accuracy shows moderate promise for preliminary disease detection with acceptable generalization
 - **Dataset constraints**: 88 subjects insufficient for complex feature engineering without severe overfitting
-- **Methodological insights**: Rigorous validation essential for realistic clinical assessment
-- **Scientific value**: Documenting classification failures provides important insights for future research directions
 
 ## Clinical Implications
 
 The binary classification approach shows moderate potential for preliminary screening but requires larger validation studies before clinical deployment. The multi-class model's failure to distinguish dementia types represents an important negative result that contributes to understanding current EEG-based classification limitations.
-
-**Clinical Readiness**: Early research stage - binary model requires external validation on 500+ subjects before clinical consideration.
 
 ## Files Structure
 
@@ -100,10 +96,6 @@ The binary classification approach shows moderate potential for preliminary scre
 - scikit-learn
 - imbalanced-learn
 - pandas, numpy, matplotlib, seaborn
-
-## Scientific Impact
-
-This study provides a realistic assessment of current EEG-based dementia classification capabilities through rigorous validation. The honest reporting of both successes (binary classification) and failures (multi-class discrimination) contributes valuable methodological insights to the field about feasible research directions and the importance of conservative validation in medical machine learning.
 
 ## Citation
 
