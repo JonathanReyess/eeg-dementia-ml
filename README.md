@@ -1,87 +1,96 @@
-
-# Cognitive Decline Prediction Using EEG Data and Machine Learning
+# Advanced EEG-Based Classification of Alzheimer's Disease and Frontotemporal Dementia
 
 ## Project Overview
 
-The goal of this project is to develop a machine learning model that can predict cognitive decline based on patterns in electroencephalogram (EEG) data, which records brain activity. 
+This project extends the foundational work of Miltiadous et al. (2023) by developing advanced machine learning classifiers for distinguishing between Alzheimer's Disease (AD), Frontotemporal Dementia (FTD), and healthy controls using EEG data. The study implements comprehensive feature engineering, class imbalance handling, and rigorous validation techniques.
 
-## Data Acquisition
+## Dataset
 
-This project utilizes the EEG dataset available on OpenNeuro. 
+**Source**: Miltiadous et al. (2023) EEG dataset from OpenNeuro (ds004504)
+- **Participants**: 88 subjects (36 AD, 23 FTD, 29 controls)
+- **Recording**: 19-channel resting-state EEG, eyes-closed condition
+- **Format**: BIDS-compliant preprocessed data
 
-The dataset contains EEG resting state recordings from individuals diagnosed with Alzheimer's disease (AD), Frontotemporal Dementia (FTD), and healthy controls (CN).
+### Downloading the Dataset
 
-To download this dataset, you can use the `@openneuro/cli` command-line tool. 
-
-### Installation
-First, ensure you have Node.js installed on your machine. You can download it from [nodejs.org](https://nodejs.org/).
-
-Then, install the OpenNeuro CLI globally by running:
 ```bash
+# Install OpenNeuro CLI
 npm install -g @openneuro/cli
-```
 
-### Authentication
-
-Before running the download command, you will need to log in to your OpenNeuro account to obtain an API key. Use the following command to log in:
-
-```bash
+# Login to OpenNeuro
 openneuro login
-```
 
-### Downloading the Dataset 
-
-To download the dataset, execute the following command in your terminal:
-
-```bash
+# Download dataset
 openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 ```
 
+## Key Contributions
+
+- **Advanced Feature Engineering**: Extended beyond basic spectral features to include connectivity measures and hemispheric asymmetry
+- **Systematic Resampling Evaluation**: Tested 9 different techniques for handling class imbalance
+- **Rigorous Validation**: Conservative cross-validation prioritizing generalization over peak performance
+- **Binary Classification Approach**: Developed disease vs. healthy screening model
+
 ## Results
 
-The performance of the model was evaluated using precision, recall, and F1-score metrics across the different classes. 
+### Multi-Class Classification (AD vs. FTD vs. Controls)
+- **Cross-Validation Accuracy**: 52.6%
+- **Conclusion**: Insufficient for reliable AD/FTD discrimination
 
-The following table summarizes the results:
+### Binary Classification (Disease vs. Healthy)
+- **Cross-Validation Accuracy**: 73.3% ± 5.5%
+- **Test Accuracy**: 77.8%
+- **Sensitivity**: 77.8% (disease detection)
+- **Specificity**: 77.8% (healthy identification)
 
-| Class | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|--------|
-| A (Alzheimer's Disease) | 0.67      | 0.75   | 0.71     | 8      |
-| F (Frontotemporal Dementia) | 0.75      | 0.38   | 0.50     | 8      |
-| C (Healthy Control) | 0.40      | 1.00   | 0.57     | 2      |
+| Metric | Disease | Healthy |
+|--------|---------|---------|
+| Precision | 0.88 | 0.64 |
+| Recall | 0.78 | 0.78 |
+| F1-Score | 0.82 | 0.70 |
 
-Overall accuracy of the model was **61%**. 
+## Performance Comparison
 
-### Summary of Performance Metrics
-- **Macro Average**:
-  - Precision: 0.61
-  - Recall: 0.71
-  - F1-Score: 0.59
+| Study | Classification | Method | Accuracy |
+|-------|---------------|--------|----------|
+| Miltiadous et al. (2023) | AD vs. Controls | RBP + Random Forests | 77.0% |
+| Miltiadous et al. (2023) | FTD vs. Controls | RBP + MLP | 73.1% |
+| **Our Study** | **Multi-class** | **Enhanced Features + XGBoost** | **52.6%** |
+| **Our Study** | **Binary Screening** | **Enhanced Features + XGBoost** | **73.3%** |
 
-- **Weighted Average**:
-  - Precision: 0.67
-  - Recall: 0.61
-  - F1-Score: 0.60
+## Key Findings
 
-## Next Steps
+- **Multi-class limitation**: Current resting-state EEG approaches cannot reliably distinguish between specific dementia types
+- **Binary screening potential**: 73% accuracy shows promise for preliminary disease detection
+- **Dataset constraints**: 88 subjects insufficient for complex feature engineering
+- **Methodological insights**: Conservative validation essential for realistic clinical assessment
 
-### Hyperparameter Tuning
+## Clinical Implications
 
-To enhance the performance of our model, the next step involves conducting a systematic search for optimal hyperparameters. This can be achieved through techniques such as Grid Search or Randomized Search. 
+The binary classification approach shows moderate potential for preliminary screening but requires larger validation studies before clinical deployment. The study demonstrates both the promise and limitations of EEG-based dementia classification.
 
-By identifying which parameters have the most significant impact on model performance, we aim to refine our model further and improve its predictive accuracy.
+## Files Structure
 
-## Related Research
+```
+├── analyze.ipynb                 # Main analysis notebook
+├── data/
+│   ├── participants.tsv         # Subject demographics
+│   ├── extracted_features.csv   # Engineered features
+│   └── performance_comparison.csv
+├── train_test_splits/           # Data splits
+└── models/                      # Trained models
+```
 
-This project is built upon methodologies and insights presented in the research paper titled [“EEG Features for Cognitive Load Classification: A Systematic Review”](https://www.mdpi.com/2306-5729/8/6/95). 
+## Requirements
 
-The paper explores various EEG features and their effectiveness in cognitive load classification, providing a foundation for the feature selection and analysis conducted in this project. 
+- Python 3.8+
+- MNE-Python
+- XGBoost
+- scikit-learn
+- imbalanced-learn
+- pandas, numpy, matplotlib, seaborn
 
-By leveraging the techniques outlined in this study, we aim to enhance our understanding of cognitive load through EEG signal processing.
+## Citation
 
-
-
-
-
-
-
-
+Built upon the dataset from:
+Miltiadous, A., et al. (2023). A Dataset of Scalp EEG Recordings of Alzheimer's Disease, Frontotemporal Dementia and Healthy Subjects from Routine EEG. *Data*, 8(6), 95.
