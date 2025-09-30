@@ -1,0 +1,20 @@
+{
+  "multiclass_model": {
+    "filename": "models/multiclass_xgb_model_20250929.pkl",
+    "cv_accuracy": 0.652,
+    "test_accuracy": 0.677,
+    "generalization_gap": 0.026,
+    "features": 20,
+    "resampling": "Original (No Resampling)",
+    "clinical_utility": "Unsuitable - FTD recall 12.5%"
+  },
+  "binary_model": {
+    "filename": "models/binary_xgb_model_20250929.pkl",
+    "cv_accuracy": 0.746,
+    "test_accuracy": 0.778,
+    "generalization_gap": 0.031,
+    "features": 25,
+    "resampling": "SMOTE",
+    "clinical_utility": "Moderate screening potential"
+  }
+}

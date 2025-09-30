@@ -1,0 +1,6 @@
+artifact_location: file:///Users/jonathanreyes/Desktop/Folder/eeg-dementia-ml/mlruns/216288276432509430
+creation_time: 1759186666234
+experiment_id: '216288276432509430'
+last_update_time: 1759186666234
+lifecycle_stage: active
+name: eeg-dementia-classification

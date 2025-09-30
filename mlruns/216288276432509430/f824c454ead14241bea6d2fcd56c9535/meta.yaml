@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/jonathanreyes/Desktop/Folder/eeg-dementia-ml/mlruns/216288276432509430/f824c454ead14241bea6d2fcd56c9535/artifacts
+end_time: 1759189619908
+entry_point_name: ''
+experiment_id: '216288276432509430'
+lifecycle_stage: active
+run_id: f824c454ead14241bea6d2fcd56c9535
+run_name: multiclass_final_20250929_1901
+run_uuid: f824c454ead14241bea6d2fcd56c9535
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759189616493
+status: 3
+tags: []
+user_id: jonathanreyes
