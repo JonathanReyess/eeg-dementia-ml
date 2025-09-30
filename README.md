@@ -48,7 +48,7 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 | Recall | 0.92 | 0.12 | 0.80 |
 | F1-Score | 0.86 | 0.18 | 0.70 |
 
-![Multiclass Confusion Matrix](results/figures/confusion_matrix_multiclass.png)
+![Multiclass Confusion Matrix](figures/confusion_matrix_multiclass.png)
 
 **Key Insight**: The multiclass model generalizes well but has fundamentally insufficient accuracy for clinical use. The confusion matrix reveals the model's critical failure in FTD detection, with most FTD cases misclassified as Alzheimer's or controls.
 
@@ -65,7 +65,7 @@ openneuro download --snapshot 1.0.7 ds004504 ds004504-download/
 | Recall | 0.78 | 0.78 |
 | F1-Score | 0.82 | 0.70 |
 
-![Binary Confusion Matrix](results/figures/confusion_matrix_binary.png)
+![Binary Confusion Matrix](figures/confusion_matrix_binary.png)
 
 The binary classifier shows balanced performance across both classes, making it suitable for preliminary screening applications.
 
